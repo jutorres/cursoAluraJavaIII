@@ -1,4 +1,6 @@
-package br.com.caelum.conta;
+package br.com.caelum.conta.system;
+
+import br.com.caelum.conta.model.Conta;
 
 public class AtualizadorDeContas {
 

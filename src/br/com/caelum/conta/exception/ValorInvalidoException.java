@@ -1,4 +1,4 @@
-package br.com.caelum.conta;
+package br.com.caelum.conta.exception;
 
 public class ValorInvalidoException extends RuntimeException {
 

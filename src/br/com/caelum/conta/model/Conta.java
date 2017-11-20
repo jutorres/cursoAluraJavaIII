@@ -1,6 +1,8 @@
-package br.com.caelum.conta;
+package br.com.caelum.conta.model;
 
-abstract class Conta {
+import br.com.caelum.conta.exception.ValorInvalidoException;
+
+public abstract class Conta {
 
 	protected double saldo;
 	

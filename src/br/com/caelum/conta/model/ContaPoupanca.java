@@ -1,4 +1,4 @@
-package br.com.caelum.conta;
+package br.com.caelum.conta.model;
 
 public class ContaPoupanca extends Conta{
 

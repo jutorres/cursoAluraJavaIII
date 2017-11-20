@@ -1,4 +1,8 @@
-package br.com.caelum.conta;
+package br.com.caelum.conta.test;
+
+import br.com.caelum.conta.exception.ValorInvalidoException;
+import br.com.caelum.conta.model.Conta;
+import br.com.caelum.conta.model.ContaCorrente;
 
 public class Main {
 

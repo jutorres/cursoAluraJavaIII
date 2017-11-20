@@ -1,4 +1,6 @@
-package br.com.caelum.conta;
+package br.com.caelum.conta.model;
+
+import br.com.caelum.conta.system.Tributavel;
 
 public class ContaCorrente extends Conta implements Tributavel {
 	
