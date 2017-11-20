@@ -5,6 +5,8 @@ import br.com.caelum.conta.exception.ValorInvalidoException;
 public abstract class Conta {
 
 	protected double saldo;
+	private int numero;
+	private String nome;
 	
 	public double getSaldo() {
 		return this.saldo;
@@ -26,5 +28,16 @@ public abstract class Conta {
 	
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
+	}
+	
+	@Override
+	public String toString() {
+		return "esse objeto é uma conta com saldo: R$" + this.saldo;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Conta outraConta = (Conta) obj;
+		return this.numero == outraConta.numero && this.nome.equals(outraConta.nome);
 	}
 }
