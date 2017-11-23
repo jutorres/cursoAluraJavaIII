@@ -2,14 +2,32 @@ package br.com.caelum.conta.model;
 
 import br.com.caelum.conta.exception.ValorInvalidoException;
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta> {
 
 	protected double saldo;
 	private int numero;
 	private String nome;
 	
+
+	public Conta(int numero, String nome) {
+		this.numero = numero;
+		this.nome = nome;
+	}
+
 	public double getSaldo() {
 		return this.saldo;
+	}
+	
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	public int getNumero() {
+		return numero;
+	}
+
+	public String getNome() {
+		return nome;
 	}
 	
 	public void deposita(double valor) {
@@ -26,9 +44,6 @@ public abstract class Conta {
 	
 	public abstract double atualiza(double taxa);
 	
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
 	
 	@Override
 	public String toString() {
@@ -36,8 +51,28 @@ public abstract class Conta {
 	}
 	
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numero;
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object obj) {
-		Conta outraConta = (Conta) obj;
-		return this.numero == outraConta.numero && this.nome.equals(outraConta.nome);
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		if (numero != other.numero)
+			return false;
+		return true;
+	}
+	
+	public int compareTo(Conta outra) {
+		return this.getNumero() - outra.getNumero();
 	}
 }
